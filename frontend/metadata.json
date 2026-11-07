@@ -1,0 +1,6 @@
+{
+  "name": "WasteSort AI — Waste Segregation System",
+  "description": "An intelligent waste segregation and image classification system frontend with emerald green design, drag-and-drop analysis, history, and Spring Boot Thymeleaf architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

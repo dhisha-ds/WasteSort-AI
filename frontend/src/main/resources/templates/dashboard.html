@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — WasteSort AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+  <!-- Reusable Navigation Fragment -->
+  <div th:replace="~{fragments/navbar :: navbar('dashboard')}"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="ws-hero">
+      <div class="ws-container">
+        <div class="ws-hero-grid">
+          <div class="ws-hero-content">
+            <span class="ws-eyebrow">Smart Waste Segregation</span>
+            <h1>A Greener Tomorrow Starts With You.</h1>
+            <p class="ws-hero-desc">
+              WasteSort AI is an intelligent image classification system that identifies whether your waste is Glass, Paper, Cardboard, Plastic, Metal, or Trash — guiding you directly to the correct recycling bin with zero guesswork.
+            </p>
+            <div class="ws-hero-cta-group">
+              <a th:href="@{/classify}" class="ws-btn ws-btn-primary ws-btn-large">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" x2="12" y1="3" y2="15"/>
+                </svg>
+                Classify Waste
+              </a>
+              <a th:href="@{/about}" class="ws-btn ws-btn-outline ws-btn-large">
+                Learn How It Works
+              </a>
+            </div>
+          </div>
+
+          <div class="ws-hero-image-wrap">
+            <img src="/src/assets/images/hero_waste_sorting_1793611685473.jpg" alt="Eco-friendly waste segregation area with clean recycling stations" class="ws-hero-image">
+            <div class="ws-hero-image-caption">
+              <p>Segregation at source eliminates up to 80% of municipal landfill contamination.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Six Waste Categories Section -->
+    <section class="ws-section">
+      <div class="ws-container">
+        <div class="ws-section-header">
+          <span class="ws-eyebrow">Supported Materials</span>
+          <h2>Six Core Waste Categories</h2>
+          <p>
+            Our deep learning classification model is architected to recognize and sort materials across six critical municipal waste streams.
+          </p>
+        </div>
+
+        <div class="ws-category-grid">
+          <!-- 1. Glass -->
+          <div class="ws-cat-card">
+            <div class="ws-cat-icon-wrap ws-cat-glass">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2h8"/>
+                <path d="M9 2v3"/>
+                <path d="M15 2v3"/>
+                <path d="M6 7a2 2 0 0 0-2 2v1a7 7 0 0 0 6 6.92V21H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-2v-4.08A7 7 0 0 0 20 10V9a2 2 0 0 0-2-2H6z"/>
+              </svg>
+            </div>
+            <h3>Glass</h3>
+            <p>Glass bottles, soda containers, beverage jars, and intact glassware. 100% infinitely recyclable without quality loss.</p>
+            <div class="ws-cat-footer">
+              <span class="ws-bin-tag">Teal / Cyan Bin</span>
+              <span>Rinse before binning</span>
+            </div>
+          </div>
+
+          <!-- 2. Paper -->
+          <div class="ws-cat-card">
+            <div class="ws-cat-icon-wrap ws-cat-paper">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3>Paper</h3>
+            <p>Newspapers, office printing paper, envelopes, spiral notebook sheets, and clean paper bags.</p>
+            <div class="ws-cat-footer">
+              <span class="ws-bin-tag">Blue Bin</span>
+              <span>Keep dry and uncontaminated</span>
+            </div>
+          </div>
+
+          <!-- 3. Cardboard -->
+          <div class="ws-cat-card">
+            <div class="ws-cat-icon-wrap ws-cat-cardboard">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>Cardboard</h3>
+            <p>Corrugated delivery shipping boxes, cereal cartons, egg cartons, and paperboard packing material.</p>
+            <div class="ws-cat-footer">
+              <span class="ws-bin-tag">Brown / Blue Bin</span>
+              <span>Flatten to save volume</span>
+            </div>
+          </div>
+
+          <!-- 4. Plastic -->
+          <div class="ws-cat-card">
+            <div class="ws-cat-icon-wrap ws-cat-plastic">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2h4"/>
+                <path d="M10 5h4"/>
+                <path d="M8 8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2Z"/>
+                <path d="M9 11h6"/>
+              </svg>
+            </div>
+            <h3>Plastic</h3>
+            <p>PET beverage bottles, HDPE milk jugs, shampoo bottles, detergent tubs, and clean plastic containers.</p>
+            <div class="ws-cat-footer">
+              <span class="ws-bin-tag">Yellow Bin</span>
+              <span>Empty liquids & replace cap</span>
+            </div>
+          </div>
+
+          <!-- 5. Metal -->
+          <div class="ws-cat-card">
+            <div class="ws-cat-icon-wrap ws-cat-metal">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                <path d="M7 7h10"/>
+                <path d="M7 12h10"/>
+                <path d="M7 17h10"/>
+              </svg>
+            </div>
+            <h3>Metal</h3>
+            <p>Aluminum beverage cans, tin food cans, clean aluminum foil wraps, and metal jar lids.</p>
+            <div class="ws-cat-footer">
+              <span class="ws-bin-tag">Silver / Grey Bin</span>
+              <span>Rinse food residue</span>
+            </div>
+          </div>
+
+          <!-- 6. Trash -->
+          <div class="ws-cat-card">
+            <div class="ws-cat-icon-wrap ws-cat-trash">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"/>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                <line x1="10" y1="11" x2="10" y2="17"/>
+                <line x1="14" y1="11" x2="14" y2="17"/>
+              </svg>
+            </div>
+            <h3>Trash (General)</h3>
+            <p>Greasy pizza boxes, used sanitary wipes, multi-layered chip packets, styrofoam, and non-recyclables.</p>
+            <div class="ws-cat-footer">
+              <span class="ws-bin-tag">Black / Red Bin</span>
+              <span>General landfill waste</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="ws-section ws-section-alt">
+      <div class="ws-container">
+        <div class="ws-section-header">
+          <span class="ws-eyebrow">User Workflow</span>
+          <h2>How It Works</h2>
+          <p>Three straightforward steps to classify any household or campus waste item accurately.</p>
+        </div>
+
+        <div class="ws-steps-grid">
+          <div class="ws-step-card">
+            <div class="ws-step-num">1</div>
+            <h3>Upload an Image</h3>
+            <p>Snap a photo on your smartphone or drag-and-drop a clear image of the waste item from your device.</p>
+          </div>
+
+          <div class="ws-step-card">
+            <div class="ws-step-num">2</div>
+            <h3>Identify the Waste</h3>
+            <p>The convolutional neural network model analyzes material texture, transparency, geometry, and shape features.</p>
+          </div>
+
+          <div class="ws-step-card">
+            <div class="ws-step-num">3</div>
+            <h3>Choose the Right Bin</h3>
+            <p>Get immediate guidance showing the exact designated bin color and pre-disposal preparation tip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Footer Fragment -->
+  <div th:replace="~{fragments/footer :: footer}"></div>
+
+  <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
