@@ -31,3 +31,30 @@ build/
 
 ### VS Code ###
 .vscode/
+### PYTHON ###
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+### PYTHON ENVIRONMENT ###
+venv/
+.venv/
+env/
+
+### DATASET ###
+dataset/
+datasets/
+data/
+
+### TRAINED MODEL FILES ###
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+### JUPYTER ###
+.ipynb_checkpoints/
+
+### ENVIRONMENT VARIABLES ###
+.env
